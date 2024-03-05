@@ -1,0 +1,28 @@
+{
+  "name": "time-shortcuts",
+  "version": "1.0.0",
+  "description": "time-shortcuts for dayjs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakunoo/Time-Shortcuts.git"
+  },
+  "keywords": [
+    "dayjs",
+    "time",
+    "shortcuts"
+  ],
+  "author": "sakunoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakunoo/Time-Shortcuts/issues"
+  },
+  "homepage": "https://github.com/sakunoo/Time-Shortcuts#readme",
+  "dependencies": {
+    "dayjs": "^1.11.10"
+  }
+}
