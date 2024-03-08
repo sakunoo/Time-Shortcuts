@@ -3,7 +3,6 @@ import quarterOfYear from "dayjs/plugin/quarterOfYear";
 
 export function loadTimeShortcuts() {
     dayjs.extend(quarterOfYear);
-
     return [
         {
             text: "今天",
