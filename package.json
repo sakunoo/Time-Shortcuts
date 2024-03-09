@@ -1,6 +1,6 @@
 {
   "name": "time-shortcuts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "time-shortcuts for dayjs",
   "main": "index.js",
   "type": "module",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sakunoo/Time-Shortcuts.git"
+    "url": "https://github.com/sakunoo/Time-Shortcuts"
   },
   "keywords": [
     "dayjs",
