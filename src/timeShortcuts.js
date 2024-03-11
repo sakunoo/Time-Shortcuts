@@ -1,62 +1,45 @@
 import dayjs from "dayjs";
 import quarterOfYear from "dayjs/plugin/quarterOfYear";
 
+dayjs.extend(quarterOfYear);
+
+function startEndOf(unit, date = dayjs()) {
+    return [date.startOf(unit).toDate(), date.endOf(unit).toDate()];
+}
+
 export function loadTimeShortcuts() {
-    dayjs.extend(quarterOfYear);
     return [
         {
             text: "今天",
-            value: () => {
-                const day = dayjs();
-                return [day.startOf("day").toDate(), day.endOf("day").toDate()];
-            }
+            value: () => startEndOf("day"),
         },
         {
             text: "昨天",
-            value: () => {
-                const day = dayjs().subtract(1, "day");
-                return [day.startOf("day"), day.endOf("day")];
-            }
+            value: () => startEndOf("day", dayjs().subtract(1, "day")),
         },
         {
             text: "本周",
-            value: () => {
-                return [dayjs().day(1).startOf("day"), dayjs().day(7).endOf("day")];
-            }
+            value: () => [dayjs().day(1).startOf("day"), dayjs().day(7).endOf("day")],
         },
         {
             text: "上周",
-            value: () => {
-                return [dayjs().day(-6).startOf("day"), dayjs().day(0).endOf("day")];
-            }
+            value: () => [dayjs().day(-6).startOf("day"), dayjs().day(0).endOf("day")],
         },
         {
             text: "本月",
-            value: () => {
-                const day = dayjs();
-                return [day.startOf("month").toDate(), day.endOf("month").toDate()];
-            }
+            value: () => startEndOf("month"),
         },
         {
             text: "上月",
-            value: () => {
-                const day = dayjs().subtract(1, "month");
-                return [day.startOf("month").toDate(), day.endOf("month").toDate()];
-            }
+            value: () => startEndOf("month", dayjs().subtract(1, "month")),
         },
         {
             text: "本季度",
-            value: () => {
-                const day = dayjs();
-                return [day.startOf("quarter").startOf("day"), day.endOf("quarter").endOf("day")];
-            }
+            value: () => startEndOf("quarter"),
         },
         {
             text: "上季度",
-            value: () => {
-                const day = dayjs().subtract(1, "quarter");
-                return [day.startOf("quarter").startOf("day"), day.endOf("quarter").endOf("day")];
-            }
+            value: () => startEndOf("quarter", dayjs().subtract(1, "quarter")),
         }
     ];
 }
